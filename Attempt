@@ -1,0 +1,8 @@
+a = 1;
+b = 1;
+u[x_, t_, Pmax_] := 
+ NIntegrate[
+  Sin[p a] Exp[-b p^2 t] Exp[I p x]/(Pi p), {p, -Pmax, Pmax}]
+Chop[u[1, 1, 20]]
+Plot[Chop[u[x, 0, 10]], {x, -2, 20}]
+Plot3D[Chop[u[x, t, 200]], {x, -2, 2}, {t, 0, 2 }]
